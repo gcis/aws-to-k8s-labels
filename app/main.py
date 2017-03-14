@@ -44,7 +44,7 @@ def tag_nodes():
         
         for tag in tags_ec2:
             
-            str_clean = lambda x: x.replace(':', '.').replace('/', '.')
+            str_clean = lambda x: x.replace(':', '.').replace('/', '-')
             
             key = str_clean(tag['Key'])
             value = str_clean(tag['Value'])
@@ -63,7 +63,7 @@ def tag_nodes():
             
             for tag in tags_asg:
                 
-                str_clean = lambda x: x.replace(':', '.').replace('/', '.')
+                str_clean = lambda x: x.replace(':', '.').replace('/', '-')
                 
                 key = str_clean(tag['Key'])
                 value = str_clean(tag['Value'])
