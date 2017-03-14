@@ -85,8 +85,8 @@ def tag_nodes():
                              headers={'Content-Type': 'application/merge-patch+json'},
                              verify=False)
         
-        print 'Kubernetes API response: ' + add_labels.status_code
-        print '___________________________________________________'
+        print 'Kubernetes API response: ' + str(add_labels.status_code)
+        print '________________________________________________________'
 
 while True:
     
