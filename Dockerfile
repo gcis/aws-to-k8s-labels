@@ -1,6 +1,6 @@
 FROM python:2.7-alpine
 
-COPY main.py /app
+COPY app /app
 
 WORKDIR /app
 
