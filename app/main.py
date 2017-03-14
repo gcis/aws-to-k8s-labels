@@ -9,10 +9,11 @@ requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.
 
 TOKEN = open('/var/run/secrets/kubernetes.io/serviceaccount/token', 'r').read()
 API_HOST = os.environ['KUBERNETES_SERVICE_HOST']
+REGION = os.environ['REGION'] # todo: get from kubernetes API
 
 s = requests.Session()
 s.headers.update({'Authorization': 'Bearer ' + TOKEN})
-ec2 = boto3.client('ec2')
+ec2 = boto3.client('ec2', region_name=REGION)
 
 
 def get_url(url):
