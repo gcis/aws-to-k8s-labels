@@ -56,7 +56,7 @@ def tag_nodes():
         
         if len(autoscaling_group):
             
-            tags_asg = ec2.describe_auto_scaling_groups(
+            tags_asg = asg.describe_auto_scaling_groups(
                 AutoScalingGroupNames=[
                     autoscaling_group
                 ])['AutoScalingGroups'][0]['Tags']
