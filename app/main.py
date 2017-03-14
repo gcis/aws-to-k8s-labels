@@ -13,7 +13,7 @@ s = requests.Session()
 s.headers.update({'Authorization': 'Bearer ' + TOKEN})
 
 ec2 = boto3.client('ec2', region_name=REGION)
-asg = boto3.client('autoscaling')
+asg = boto3.client('autoscaling', region_name=REGION)
 
 
 def get_url(url):
